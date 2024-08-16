@@ -64,41 +64,41 @@ Here is the version that is required to solve the lab.
     - File and directory names on the server
     - Keys used to encrypt data transmitted via the client
     
-    ### Lab2: **Information disclosure on debug page**
+### Lab2: **Information disclosure on debug page**
 
-    View the source code first you’ll find one directory
+View the source code first you’ll find one directory
 
-    `/cgi-bin/phpinfo.php`
+`/cgi-bin/phpinfo.php`
 
-    If you visit this page you’ll find the value of the secret key - 
+If you visit this page you’ll find the value of the secret key - 
 
-    ![Untitled](/assets/img/Porswigger/InformationDisclosure/Lab2%20Information%20disclosure%20on%20debug%20page/Untitled.png)
-    <br>
-    <br>
+![Untitled](/assets/img/Porswigger/InformationDisclosure/Lab2%20Information%20disclosure%20on%20debug%20page/Untitled.png)
+<br>
+<br>
     
 - Source code disclosure via backup files:
     
     Text editors often generate temporary backup files while the original file is being edited.
     
-    ### Lab3: **Source code disclosure via backup files**
-    
-    First i thought i should try to visiting the `/robots.txt` 
+### Lab3: **Source code disclosure via backup files**
 
-    ![Untitled](/assets/img/Porswigger/InformationDisclosure/Lab3%20Source%20code%20disclosure%20via%20backup%20files/Untitled.png)
+First i thought i should try to visiting the `/robots.txt` 
 
-    Found this hidden directory by visiting that URL we found this:
+![Untitled](/assets/img/Porswigger/InformationDisclosure/Lab3%20Source%20code%20disclosure%20via%20backup%20files/Untitled.png)
 
-    ![Untitled](/assets/img/Porswigger/InformationDisclosure/Lab3%20Source%20code%20disclosure%20via%20backup%20files/Untitled%201.png)
+Found this hidden directory by visiting that URL we found this:
 
-    It contains java code and to solve this lab we have to find the password and submit that password,
+![Untitled](/assets/img/Porswigger/InformationDisclosure/Lab3%20Source%20code%20disclosure%20via%20backup%20files/Untitled%201.png)
 
-    here we found the password,
+It contains java code and to solve this lab we have to find the password and submit that password,
 
-    ![Untitled](/assets/img/Porswigger/InformationDisclosure/Lab3%20Source%20code%20disclosure%20via%20backup%20files/Untitled%202.png)
+here we found the password,
 
-    submit this password and lab is solved.
-    <br>
-    <br>
+![Untitled](/assets/img/Porswigger/InformationDisclosure/Lab3%20Source%20code%20disclosure%20via%20backup%20files/Untitled%202.png)
+
+submit this password and lab is solved.
+<br>
+<br>
 
 - Information disclosure due to insecure configuration:
     
@@ -110,51 +110,51 @@ Here is the version that is required to solve the lab.
     
     - If enabled, the web server will respond to requests that use the `TRACE` method by echoing in the response the exact request that was received.
     
-    ### Lab4: **Authentication bypass via Information disclosure**
-    
-    As we have learned about the `TRACE` method so we knew that we have to use this HTTP method to solve the lab.
+### Lab4: **Authentication bypass via Information disclosure**
 
-    Lab’s description says, This lab's administration interface has an authentication bypass vulnerability.
+As we have learned about the `TRACE` method so we knew that we have to use this HTTP method to solve the lab.
 
-    So we have to focus on bypassing the logic page that’s for sure.
+Lab’s description says, This lab's administration interface has an authentication bypass vulnerability.
 
-    So we start our Burp and try the checking the request and their respective responses.
+So we have to focus on bypassing the logic page that’s for sure.
 
-    ![Untitled](/assets/img/Porswigger/InformationDisclosure/Lab4%20Authentication%20bypass%20via%20Information%20disclos/Untitled.png)
+So we start our Burp and try the checking the request and their respective responses.
 
-    Send this get request to the Burp Repeater. and change the HTTP `GET`method to `TRACE`method.
+![Untitled](/assets/img/Porswigger/InformationDisclosure/Lab4%20Authentication%20bypass%20via%20Information%20disclos/Untitled.png)
 
-    Which will result in this response.
+Send this get request to the Burp Repeater. and change the HTTP `GET`method to `TRACE`method.
 
-    ![Untitled](/assets/img/Porswigger/InformationDisclosure/Lab4%20Authentication%20bypass%20via%20Information%20disclos/Untitled%201.png)
+Which will result in this response.
 
-    As we can see here their is one unique header used which is: 
+![Untitled](/assets/img/Porswigger/InformationDisclosure/Lab4%20Authentication%20bypass%20via%20Information%20disclos/Untitled%201.png)
 
-    ```html
-    X-Custom-IP-Authorization: 152.57.193.50
-    ```
+As we can see here their is one unique header used which is: 
 
-    Its not the actual header Portswigger created this for this lab. Setting its value to [localhost](http://localhost) what response we get we can check.
+```html
+X-Custom-IP-Authorization: 152.57.193.50
+```
 
-    ![Untitled](/assets/img/Porswigger/InformationDisclosure/Lab4%20Authentication%20bypass%20via%20Information%20disclos/Untitled%202.png)
+Its not the actual header Portswigger created this for this lab. Setting its value to [localhost](http://localhost) what response we get we can check.
 
-    we found there is one `/admin` page after we visit this page it says:
+![Untitled](/assets/img/Porswigger/InformationDisclosure/Lab4%20Authentication%20bypass%20via%20Information%20disclos/Untitled%202.png)
 
-    ![Untitled](/assets/img/Porswigger/InformationDisclosure/Lab4%20Authentication%20bypass%20via%20Information%20disclos/Untitled%203.png)
+we found there is one `/admin` page after we visit this page it says:
 
-    so we have to send a POST request to admin page lets see what we get:
+![Untitled](/assets/img/Porswigger/InformationDisclosure/Lab4%20Authentication%20bypass%20via%20Information%20disclos/Untitled%203.png)
 
-    ![Untitled](/assets/img/Porswigger/InformationDisclosure/Lab4%20Authentication%20bypass%20via%20Information%20disclos/Untitled%204.png)
+so we have to send a POST request to admin page lets see what we get:
 
-    Now we are admin and their is one delete button that will delete user from database and to solve this lab we have to delete `carlos`
+![Untitled](/assets/img/Porswigger/InformationDisclosure/Lab4%20Authentication%20bypass%20via%20Information%20disclos/Untitled%204.png)
 
-    ![Untitled](/assets/img/Porswigger/InformationDisclosure/Lab4%20Authentication%20bypass%20via%20Information%20disclos/Untitled%205.png)
+Now we are admin and their is one delete button that will delete user from database and to solve this lab we have to delete `carlos`
 
-    we got 302 that means user carlos is deleted.
+![Untitled](/assets/img/Porswigger/InformationDisclosure/Lab4%20Authentication%20bypass%20via%20Information%20disclos/Untitled%205.png)
 
-    ![Untitled](/assets/img/Porswigger/InformationDisclosure/Lab4%20Authentication%20bypass%20via%20Information%20disclos/Untitled%206.png)
-    <br>
-    <br>
+we got 302 that means user carlos is deleted.
+
+![Untitled](/assets/img/Porswigger/InformationDisclosure/Lab4%20Authentication%20bypass%20via%20Information%20disclos/Untitled%206.png)
+<br>
+<br>
 
 - Version control history:
     
@@ -164,30 +164,30 @@ Here is the version that is required to solve the lab.
     
     This might not give you access to the full source code, but comparing the diff will allow you to read small snippets of code. As with any source code, you might also find sensitive data hard-coded within some of the changed lines.
     
-    ### Lab5: **Information disclosure in version control history**
+### Lab5: **Information disclosure in version control history**
 
-    To solve the lab, obtain the password for the `administrator` user then log in and delete the user `carlos`.
+To solve the lab, obtain the password for the `administrator` user then log in and delete the user `carlos`.
 
-    As they previously explained about /.git directory so there might be some directory so lets try it out.
+As they previously explained about /.git directory so there might be some directory so lets try it out.
 
-    ![Untitled](/assets/img/Porswigger/InformationDisclosure/Lab5%20Information%20disclosure%20in%20version%20control%20his/Untitled.png)
+![Untitled](/assets/img/Porswigger/InformationDisclosure/Lab5%20Information%20disclosure%20in%20version%20control%20his/Untitled.png)
 
-    Here it is found YOU.
+Here it is found YOU.
 
-    so now we have to download it using wget like this: (In Linux)
+so now we have to download it using wget like this: (In Linux)
 
-    ```html
-    wget -r https://0a1200a10314a6bf8120b697004100e6.web-security-academy.net/.git
-    ```
+```html
+wget -r https://0a1200a10314a6bf8120b697004100e6.web-security-academy.net/.git
+```
 
-    Now before moving futher you must install git cola for your futher exploitation. Install that first.
+Now before moving futher you must install git cola for your futher exploitation. Install that first.
 
-    After that open the download folder in git cola you’ll see two different files admin.conf and admin_panel.php
+After that open the download folder in git cola you’ll see two different files admin.conf and admin_panel.php
 
-    ![Untitled](/assets/img/Porswigger/InformationDisclosure/Lab5%20Information%20disclosure%20in%20version%20control%20his/Untitled%201.png)
+![Untitled](/assets/img/Porswigger/InformationDisclosure/Lab5%20Information%20disclosure%20in%20version%20control%20his/Untitled%201.png)
 
-    now Undo the last commit just like this:
+now Undo the last commit just like this:
 
-    ![Untitled](/assets/img/Porswigger/InformationDisclosure/Lab5%20Information%20disclosure%20in%20version%20control%20his/Untitled%202.png)
+![Untitled](/assets/img/Porswigger/InformationDisclosure/Lab5%20Information%20disclosure%20in%20version%20control%20his/Untitled%202.png)
 
-    In this you’ll find the last commit to admin.conf file which contains password use that and delete user carlos to solve the lab.
+In this you’ll find the last commit to admin.conf file which contains password use that and delete user carlos to solve the lab.
