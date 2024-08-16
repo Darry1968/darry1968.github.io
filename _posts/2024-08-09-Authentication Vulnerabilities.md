@@ -4,8 +4,8 @@ tags: [web exploitation]     # TAG names should always be lowercase
 author: Darshan
 description: Authentication is the process of verifying that a user is who they claim to be. Authorization involves verifying whether a user is allowed to do something.
 image:
-    path: https://c4.wallpaperflare.com/wallpaper/1018/932/961/hulk-hulk-film-muscles-superhero-marvel-cinematic-universe-hd-wallpaper-preview.jpg
-pin: true
+    path: /assets/img/Banners/Authentication-Vulnerabilities.jpeg
+pin: False
 ---
 
 ## Vulnerabilities in Password based login
