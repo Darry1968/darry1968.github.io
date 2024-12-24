@@ -4,7 +4,7 @@ tags: [web exploitation]     # TAG names should always be lowercase
 author: Darshan
 description: Information disclosure, also known as information leakage, is when a website unintentionally reveals sensitive information to its users.
 image:
-    path: /assets/img/Banners/Authentication-Vulnerabilities.jpeg
+    path: /assets/img/Banners/info-disclosure.png
 pin: False
 ---
 
