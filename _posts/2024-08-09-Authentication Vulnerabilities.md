@@ -370,3 +370,5 @@ New passwords do not match (This case rises when current password is correct but
 
 this way we found the correct password for Carlos user.
 <br>
+
+*Thank you for reading!! ;)*

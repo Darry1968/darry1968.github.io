@@ -191,3 +191,5 @@ now Undo the last commit just like this:
 ![Untitled](/assets/img/Porswigger/InformationDisclosure/Lab5%20Information%20disclosure%20in%20version%20control%20his/Untitled%202.png)
 
 In this you’ll find the last commit to admin.conf file which contains password use that and delete user carlos to solve the lab.
+
+*Thank you for reading!! ;)*

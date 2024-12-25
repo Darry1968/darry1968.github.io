@@ -26,7 +26,23 @@ The exploitation relied on crafting SQL queries that deliberately caused a delay
 
 ## Application Walkthrough
 
-*(Leave it empty, I'll fill the details)*
+The following screenshots showcase the vulnerable application in action:
+
+![homepage](/assets/img/ShunyaCTF/TimeStone/homepage.png)
+
+1. The home page provides information about what a time stone is and what are the key facts about the time stone.
+2. After hovering mouse pointer to the GIF image, that gif image is clickable and redirecting us to new directory named `/time`.
+3. When I visit the `/time` directory, there are bunch of Marvel movies posters and there ratings. There are no input boxes or other stuffs just a gallary of Marvel movies. As shown in the image below:  
+![mainpage](/assets/img/ShunyaCTF/TimeStone/mainpage.png)
+
+1. So I decided to review the source code to check if I can find something and boom there is some Javascript code running that seems suspicious, see the screenshot below:
+![sourcecode](/assets/img/ShunyaCTF/TimeStone/sourcecode.png)
+
+2. There are two different api calls are happening first one is `/api/goodforyou` and another one is `/api/movies`.
+3. First one is just for diversion we don't need that but the another one has something interesting, Application is sending a POST request to that endpoint with a json data `sequence: 'aWQgZGVzYw=='`.
+4. It's a base64 data so let's decode it. `aWQgZGVzYw==` -> `id desc`
+5. `id desc` it looks like the SQL/SQLite syntax. Now we understand that this challenge is about the SQL injection and as the name suggests it's a time stone so the SQL injection should be time based. Let's create a script to exploit this vulnerablity.
+6. But before that to read the flag we must know the table name where the flag is stored so we create 2 different script one for table name retrival and another for flag retrival. Script are mentioned below.  
 
 ## Solution Script Walkthrough
 
@@ -154,4 +170,6 @@ This challenge highlighted the importance of mitigating SQL injection vulnerabil
 - Disabling potentially harmful database functions or queries.
 
 Understanding and exploiting time-based SQL injection requires patience and precision, making it an effective learning exercise for aspiring security professionals.
+
+*Thank you for reading!! ;)*
 

@@ -29,8 +29,8 @@ The following screenshots showcase the vulnerable application in action:
  
 ![HomePage](/assets/img/ShunyaCTF/SpaceStone/homepage.png)
 
-1. This the home page provided explaining about what a space stone is and what are the key facts about the space stone.
-2. After reviewing the source code, we understand that the Tresseract seems to be clickable and after clicking the button we are redirected to another location named `/space`.
+1. The home page provides information about what a space stone is and what are the key facts about the space stone.
+2. After reviewing the source code, we understand that the Tresseract seems to be clickable and after clicking the button we get redirected to another location named `/space`.
 3. This is the main application page as shown below.  
 
 ![Untitled](/assets/img/ShunyaCTF/SpaceStone/mainpage.png)
@@ -126,3 +126,4 @@ print("Payload for linux server: ", malicious_payload)
 
 This challenge highlights the dangers of insecure deserialization and the importance of following secure coding practices. By crafting and analyzing the solution script, participants gain hands-on experience with a critical vulnerability and learn how to mitigate it in real-world applications.
 
+*Thank you for reading!! ;)*
