@@ -4,7 +4,7 @@ icon: fas fa-info-circle
 order: 4
 ---
 
-> Add Markdown syntax content to file `_tabs/about.md`{: .filepath } and it will show up on this page.
+>Ain't gonna survive next year
 {: .prompt-tip }
 
 ## Hi, I'm Darshan Soni 👋
@@ -33,7 +33,7 @@ I'm Darshan Soni, a final-year B.Tech student specializing in **Cybersecurity an
 - Programming: **Python**, **PowerShell**
 - Tools: **OWASP ZAP**, **Burp Suite**, **Nmap**
 - Security: OSINT, Vulnerability Research, Red Teaming
-- Web Technologies: **React**, **Django**, **Flask**
+- Web Technologies: **Django**, **Flask**, **PHP**
 - Databases: **MongoDB**, **MySQL**
 
 ### 🌍 Where I Am
