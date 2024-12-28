@@ -1,6 +1,6 @@
 ---
-categories: [ShunyaCTF]
-tags: [web exploitation]     # TAG names should always be lowercase
+categories: [ShunyaCTF, The Space Stone]
+tags: [web exploitation, insecure deserialization]     # TAG names should always be lowercase
 author: Darshan
 description: Web exploitation category challenge created by me for ShunyaCTF 2k24
 image:
@@ -8,7 +8,7 @@ image:
 pin: False
 ---
 
-# Solution for Pickle RCE Challenge
+# Solution for The Space Stone
 
 ## Challenge Overview
 

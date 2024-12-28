@@ -1,5 +1,5 @@
 ---
-categories: [ShunyaCTF]
+categories: [ShunyaCTF, Drug Injection]
 tags: [web exploitation]     # TAG names should always be lowercase
 author: Darshan
 description: Web exploitation category challenge created by me for ShunyaCTF Aarambha

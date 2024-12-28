@@ -1,5 +1,5 @@
 ---
-categories: [ShunyaCTF]
+categories: [ShunyaCTF, Pyception]
 tags: [web exploitation]     # TAG names should always be lowercase
 author: Darshan
 description: Web exploitation category challenge created by me for ShunyaCTF Aarambha

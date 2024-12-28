@@ -1,6 +1,6 @@
 ---
-categories: [ShunyaCTF]
-tags: [web exploitation, SQL injection]     # TAG names should always be lowercase
+categories: [ShunyaCTF, The Time Stone]
+tags: [web exploitation, Time-Based SQL Injection]     # TAG names should always be lowercase
 author: Darshan
 description: Web exploitation category challenge created by me for ShunyaCTF 2k24
 image:
@@ -8,7 +8,7 @@ image:
 pin: False
 ---
 
-# Solution for Time-Based SQL Injection
+# Solution for The Time Stone
 
 ## Challenge Overview
 
