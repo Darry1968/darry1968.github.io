@@ -8,4 +8,4 @@ image:
 pin: False
 ---
 
-## Will update the blog ASAP
+## Will update the blog As Soon As Possible
